@@ -61,6 +61,10 @@
     <Compile Include="bob\BobTest.fs" />
     <Compile Include="sum-of-multiples\SumOfMultiples.fs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.fs" />
+    <Compile Include="space-age\SpaceAge.fs" />
+    <Compile Include="space-age\SpaceAgeTest.fs" />
+    <Compile Include="raindrops\Raindrops.fs" />
+    <Compile Include="raindrops\RaindropsTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -72,6 +76,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Numerics" />
   </ItemGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
