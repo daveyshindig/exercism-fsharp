@@ -65,6 +65,10 @@
     <Compile Include="space-age\SpaceAgeTest.fs" />
     <Compile Include="raindrops\Raindrops.fs" />
     <Compile Include="raindrops\RaindropsTest.fs" />
+    <Compile Include="accumulate\Accumulate.fs" />
+    <Compile Include="accumulate\AccumulateTest.fs" />
+    <Compile Include="grade-school\GradeSchool.fs" />
+    <Compile Include="grade-school\GradeSchoolTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
