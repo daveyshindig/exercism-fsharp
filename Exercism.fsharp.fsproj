@@ -69,6 +69,10 @@
     <Compile Include="accumulate\AccumulateTest.fs" />
     <Compile Include="grade-school\GradeSchool.fs" />
     <Compile Include="grade-school\GradeSchoolTest.fs" />
+    <Compile Include="clock\Clock.fs" />
+    <Compile Include="clock\ClockTest.fs" />
+    <Compile Include="beer-song\BeerSong.fs" />
+    <Compile Include="beer-song\BeerSongTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
