@@ -75,6 +75,11 @@
     <Compile Include="beer-song\BeerSongTest.fs" />
     <Compile Include="kindergarten-garden\KinderGartenGarden.fs" />
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs" />
+    <Compile Include="BinaryTree.fs" />
+    <Compile Include="queen-attack\QueenAttack.fs" />
+    <Compile Include="queen-attack\QueenAttackTest.fs" />
+    <Compile Include="robot-simulator\RobotSimulator.fs" />
+    <Compile Include="robot-simulator\RobotSimulatorTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
