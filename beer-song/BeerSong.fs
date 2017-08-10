@@ -2,7 +2,7 @@
 
 let verse x = 
     let str s1 s2 s3 s4 = sprintf "%s of beer on the wall, %s of beer.\n\
-                           %s, %s of beer on the wall.\n\n" s1 s2 s3 s4
+                           %s, %s of beer on the wall.\n" s1 s2 s3 s4
     match x with
     | 0 -> str "No more bottles" "no more bottles" 
                "Go to the store and buy some more" "99 bottles"
@@ -16,7 +16,7 @@ let verse x =
 
 let rec verses x y =
     match x - y with
-    | 0 -> verse y
-    | _ -> verse x + verses (x - 1) y
+    | 0 -> verse y + "\n"
+    | _ -> verse x + "\n" + verses (x - 1) y
 
 let sing = verses 99 0

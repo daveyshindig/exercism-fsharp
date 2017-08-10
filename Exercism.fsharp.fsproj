@@ -73,6 +73,8 @@
     <Compile Include="clock\ClockTest.fs" />
     <Compile Include="beer-song\BeerSong.fs" />
     <Compile Include="beer-song\BeerSongTest.fs" />
+    <Compile Include="kindergarten-garden\KinderGartenGarden.fs" />
+    <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
