@@ -33,4 +33,5 @@ let simulate robot cmds =
         | 'R' :: tl -> simrec (turnRight r) tl
         | 'L' :: tl -> simrec (turnLeft r) tl
         | 'A' :: tl -> simrec (advanceRobot r) tl
+        | _ -> failwith "SYNTAX ERROR: ROBOT DOES NOT UNDERSTAND"
     simrec robot ls

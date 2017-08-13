@@ -80,6 +80,10 @@
     <Compile Include="queen-attack\QueenAttackTest.fs" />
     <Compile Include="robot-simulator\RobotSimulator.fs" />
     <Compile Include="robot-simulator\RobotSimulatorTest.fs" />
+    <Compile Include="allergies\Allergies.fs" />
+    <Compile Include="allergies\AllergiesTest.fs" />
+    <Compile Include="ocr-numbers\OcrNumbers.fs" />
+    <Compile Include="ocr-numbers\OcrNumbersTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
