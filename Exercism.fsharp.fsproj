@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="example\Example.fs" />
     <Compile Include="example\ExampleTest.fs" />
+    <Compile Include="tree-building\TreeBuilding.fs" />
+    <Compile Include="tree-building\TreeBuildingTest.fs" />
     <Content Include="packages.config" />
     <Compile Include="leap\LeapYear.fs" />
     <Compile Include="leap\LeapTest.fs" />
@@ -84,6 +86,8 @@
     <Compile Include="allergies\AllergiesTest.fs" />
     <Compile Include="ocr-numbers\OcrNumbers.fs" />
     <Compile Include="ocr-numbers\OcrNumbersTest.fs" />
+    <Compile Include="binary-search-tree\BinarySearchTree.fs" />
+    <Compile Include="binary-search-tree\BinarySearchTreeTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

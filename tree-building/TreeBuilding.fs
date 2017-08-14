@@ -24,41 +24,34 @@ let buildTree records =
     let records' = List.sortBy (fun x -> x.RecordId) records
 
     if List.isEmpty records' then failwith "Empty input"
-    else
-        let root = records'.[0]
-        if (root.ParentId = 0 |> not) then
-            failwith "Root node is invalid"
-        else
-            if (root.RecordId = 0 |> not) then failwith "Root node is invalid"
-            else
-                let mutable prev = -1
-                let mutable leafs = []
+    let root = records'.[0]
+    if (root.ParentId <> 0 || root.RecordId <> 0) then failwith "Root node is invalid"
 
-                for r in records' do
-                    if (r.RecordId <> 0 && (r.ParentId > r.RecordId || r.ParentId = r.RecordId)) then
-                        failwith "Nodes with invalid parents"
-                    else
-                        if r.RecordId <> prev + 1 then
-                            failwith "Non-continuous list"
-                        else                            
-                            prev <- r.RecordId
-                            if (r.RecordId = 0) then
-                                leafs <- (-1, r.RecordId) :: leafs
-                            else
-                                leafs <- (r.ParentId, r.RecordId) :: leafs
+    let rec makeLeaves rs prev leaves =
+        match rs with
+        | [] -> leaves
+        | r :: tl when r.RecordId <> 0 && (r.ParentId > r.RecordId || r.ParentId = r.RecordId) ->
+            failwith "Nodes with invalid parents"
+        | r :: tl when r.RecordId <> prev + 1 -> failwith "Nodes with invalid parents"
+        | r :: tl when r.RecordId = 0 -> makeLeaves tl r.RecordId ((-1, r.RecordId) :: leaves)
+        | r :: tl -> makeLeaves tl r.RecordId ((r.ParentId, r.RecordId) :: leaves)
 
-                leafs <- List.rev leafs 
-                let root = leafs.[0]
+    let leaves = makeLeaves records' -1 [] |> List.rev
+    let root = leaves.[0]
 
-                let grouped = leafs |> List.groupBy fst |> List.map (fun (x, y) -> (x, List.map snd y))
-                let parens = List.map fst grouped
-                let map = grouped |> Map.ofSeq
+    let rec makeGroups leaves map =
+        match leaves with
+        | [] -> Map.map (fun k t -> List.rev t) map
+        | leaf :: tl when Map.containsKey (fst leaf) map -> 
+            let children = snd leaf :: Map.find (fst leaf) map
+            makeGroups tl (Map.add (fst leaf) children map)
+        | leaf :: tl -> makeGroups tl (Map.add (fst leaf) [snd leaf] map)
 
-                let rec helper key =
-                    if Map.containsKey key map then
-                        Branch (key, List.map (fun i -> helper i) (Map.find key map))
-                    else
-                        Leaf key                    
+    let map = makeGroups leaves Map.empty
 
-                let root = helper 0
-                root
+    let rec helper key =
+        match Map.containsKey key map with
+        | true -> Branch (key, List.map helper (Map.find key map))
+        | false -> Leaf key                    
+
+    helper 0

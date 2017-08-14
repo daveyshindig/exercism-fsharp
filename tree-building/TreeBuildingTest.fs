@@ -4,6 +4,8 @@ open NUnit.Framework
 
 open TreeBuilding
 
+let item x (ls: 'a list) = ls.[x]
+
 [<Test>]
 let ``One node`` () =
     let input = 
@@ -32,11 +34,11 @@ let ``Three nodes in order`` () =
     Assert.That(recordId tree, Is.EqualTo(0))
     Assert.That(children tree |> List.length, Is.EqualTo(2))
 
-    Assert.That(children tree |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 0 |> recordId, Is.EqualTo(1))
+    Assert.That(children tree |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 0 |> recordId, Is.EqualTo(1))
 
-    Assert.That(children tree |> List.item 1 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> recordId, Is.EqualTo(2))
+    Assert.That(children tree |> item 1 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> recordId, Is.EqualTo(2))
 
 [<Test>]
 let ``Three nodes in reverse order`` () =
@@ -53,11 +55,11 @@ let ``Three nodes in reverse order`` () =
     Assert.That(recordId tree, Is.EqualTo(0))
     Assert.That(children tree |> List.length, Is.EqualTo(2))
 
-    Assert.That(children tree |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 0 |> recordId, Is.EqualTo(1))
+    Assert.That(children tree |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 0 |> recordId, Is.EqualTo(1))
 
-    Assert.That(children tree |> List.item 1 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> recordId, Is.EqualTo(2))
+    Assert.That(children tree |> item 1 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> recordId, Is.EqualTo(2))
 
 [<Test>]
 let ``More than two children`` () =
@@ -75,14 +77,14 @@ let ``More than two children`` () =
     Assert.That(recordId tree, Is.EqualTo(0))
     Assert.That(children tree |> List.length, Is.EqualTo(3))
 
-    Assert.That(children tree |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 0 |> recordId, Is.EqualTo(1))
+    Assert.That(children tree |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 0 |> recordId, Is.EqualTo(1))
 
-    Assert.That(children tree |> List.item 1 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> recordId, Is.EqualTo(2))
+    Assert.That(children tree |> item 1 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> recordId, Is.EqualTo(2))
 
-    Assert.That(children tree |> List.item 2 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 2 |> recordId, Is.EqualTo(3))
+    Assert.That(children tree |> item 2 |> isBranch, Is.False)
+    Assert.That(children tree |> item 2 |> recordId, Is.EqualTo(3))
 
 [<Test>]
 let ``Binary tree`` () =
@@ -103,25 +105,25 @@ let ``Binary tree`` () =
     Assert.That(recordId tree, Is.EqualTo(0))
     Assert.That(children tree |> List.length, Is.EqualTo(2))
 
-    Assert.That(children tree |> List.item 0 |> isBranch, Is.True)
-    Assert.That(children tree |> List.item 0 |> recordId, Is.EqualTo(1))    
-    Assert.That(children tree |> List.item 0 |> children |> List.length, Is.EqualTo(2))
+    Assert.That(children tree |> item 0 |> isBranch, Is.True)
+    Assert.That(children tree |> item 0 |> recordId, Is.EqualTo(1))    
+    Assert.That(children tree |> item 0 |> children |> List.length, Is.EqualTo(2))
 
-    Assert.That(children tree |> List.item 0 |> children |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 0 |> children |> List.item 0 |> recordId, Is.EqualTo(4))
+    Assert.That(children tree |> item 0 |> children |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 0 |> children |> item 0 |> recordId, Is.EqualTo(4))
 
-    Assert.That(children tree |> List.item 0 |> children |> List.item 1 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 0 |> children |> List.item 1 |> recordId, Is.EqualTo(5))
+    Assert.That(children tree |> item 0 |> children |> item 1 |> isBranch, Is.False)
+    Assert.That(children tree |> item 0 |> children |> item 1 |> recordId, Is.EqualTo(5))
     
-    Assert.That(children tree |> List.item 1 |> isBranch, Is.True)
-    Assert.That(children tree |> List.item 1 |> recordId, Is.EqualTo(2))    
-    Assert.That(children tree |> List.item 1 |> children |> List.length, Is.EqualTo(2))
+    Assert.That(children tree |> item 1 |> isBranch, Is.True)
+    Assert.That(children tree |> item 1 |> recordId, Is.EqualTo(2))    
+    Assert.That(children tree |> item 1 |> children |> List.length, Is.EqualTo(2))
     
-    Assert.That(children tree |> List.item 1 |> children |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> children |> List.item 0 |> recordId, Is.EqualTo(3))
+    Assert.That(children tree |> item 1 |> children |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> children |> item 0 |> recordId, Is.EqualTo(3))
 
-    Assert.That(children tree |> List.item 1 |> children |> List.item 1 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> children |> List.item 1 |> recordId, Is.EqualTo(6))
+    Assert.That(children tree |> item 1 |> children |> item 1 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> children |> item 1 |> recordId, Is.EqualTo(6))
 
 [<Test>]
 let ``Unbalanced tree`` () =
@@ -142,25 +144,24 @@ let ``Unbalanced tree`` () =
     Assert.That(recordId tree, Is.EqualTo(0))
     Assert.That(children tree |> List.length, Is.EqualTo(2))
 
-    Assert.That(children tree |> List.item 0 |> isBranch, Is.True)
-    Assert.That(children tree |> List.item 0 |> recordId, Is.EqualTo(1))    
-    Assert.That(children tree |> List.item 0 |> children |> List.length, Is.EqualTo(1))
+    Assert.That(children tree |> item 0 |> isBranch, Is.True)
+    Assert.That(children tree |> item 0 |> recordId, Is.EqualTo(1))    
+    Assert.That(children tree |> item 0 |> children |> List.length, Is.EqualTo(1))
 
-    Assert.That(children tree |> List.item 0 |> children |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 0 |> children |> List.item 0 |> recordId, Is.EqualTo(4))
+    Assert.That(children tree |> item 0 |> children |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 0 |> children |> item 0 |> recordId, Is.EqualTo(4))
     
-    Assert.That(children tree |> List.item 1 |> isBranch, Is.True)
-    Assert.That(children tree |> List.item 1 |> recordId, Is.EqualTo(2))
-    Assert.That(children tree |> List.item 1 |> children |> List.length, Is.EqualTo(3))
+    Assert.That(children tree |> item 1 |> recordId, Is.EqualTo(2))
+    Assert.That(children tree |> item 1 |> children |> List.length, Is.EqualTo(3))
     
-    Assert.That(children tree |> List.item 1 |> children |> List.item 0 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> children |> List.item 0 |> recordId, Is.EqualTo(3))
+    Assert.That(children tree |> item 1 |> children |> item 0 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> children |> item 0 |> recordId, Is.EqualTo(3))
 
-    Assert.That(children tree |> List.item 1 |> children |> List.item 1 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> children |> List.item 1 |> recordId, Is.EqualTo(5))
+    Assert.That(children tree |> item 1 |> children |> item 1 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> children |> item 1 |> recordId, Is.EqualTo(5))
 
-    Assert.That(children tree |> List.item 1 |> children |> List.item 2 |> isBranch, Is.False)
-    Assert.That(children tree |> List.item 1 |> children |> List.item 2 |> recordId, Is.EqualTo(6))
+    Assert.That(children tree |> item 1 |> children |> item 2 |> isBranch, Is.False)
+    Assert.That(children tree |> item 1 |> children |> item 2 |> recordId, Is.EqualTo(6))
 
 [<Test>]
 let ``Empty input`` () =
