@@ -88,6 +88,10 @@
     <Compile Include="ocr-numbers\OcrNumbersTest.fs" />
     <Compile Include="binary-search-tree\BinarySearchTree.fs" />
     <Compile Include="binary-search-tree\BinarySearchTreeTest.fs" />
+    <Compile Include="pig-latin\PigLatin.fs" />
+    <Compile Include="pig-latin\PigLatinTest.fs" />
+    <Compile Include="difference-of-squares\DifferenceOfSquares.fs" />
+    <Compile Include="difference-of-squares\DifferenceOfSquaresTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
