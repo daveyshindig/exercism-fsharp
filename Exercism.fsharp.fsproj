@@ -92,6 +92,10 @@
     <Compile Include="pig-latin\PigLatinTest.fs" />
     <Compile Include="difference-of-squares\DifferenceOfSquares.fs" />
     <Compile Include="difference-of-squares\DifferenceOfSquaresTest.fs" />
+    <Compile Include="gigasecond\Gigasecond.fs" />
+    <Compile Include="gigasecond\GigasecondTest.fs" />
+    <Compile Include="rna-transcription\RNATranscription.fs" />
+    <Compile Include="rna-transcription\RNATranscriptionTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
