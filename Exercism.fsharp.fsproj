@@ -96,6 +96,14 @@
     <Compile Include="gigasecond\GigasecondTest.fs" />
     <Compile Include="rna-transcription\RNATranscription.fs" />
     <Compile Include="rna-transcription\RNATranscriptionTest.fs" />
+    <Compile Include="grains\Grains.fs" />
+    <Compile Include="grains\GrainsTest.fs" />
+    <Compile Include="hamming\Hamming.fs" />
+    <Compile Include="hamming\HammingTest.fs" />
+    <Compile Include="nucleotide-count\NucleoTideCount.fs" />
+    <Compile Include="nucleotide-count\NucleotideCountTest.fs" />
+    <Compile Include="pangram\Pangram.fs" />
+    <Compile Include="pangram\PangramTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
