@@ -104,6 +104,12 @@
     <Compile Include="nucleotide-count\NucleotideCountTest.fs" />
     <Compile Include="pangram\Pangram.fs" />
     <Compile Include="pangram\PangramTest.fs" />
+    <Compile Include="etl\ETL.fs" />
+    <Compile Include="etl\ETLTest.fs" />
+    <Compile Include="two-fer\TwoFer.fs" />
+    <Compile Include="two-fer\TwoFerTest.fs" />
+    <Compile Include="triangle\Triangle.fs" />
+    <Compile Include="triangle\TriangleTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

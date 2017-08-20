@@ -9,12 +9,12 @@ let right (BinarySearchTree (_, _, r): BinarySearchTree) = r
 
 let rec insert x (BinarySearchTree (y, l, r): BinarySearchTree) = 
     if x <= y then 
-        match l with 
-        | Some subTree -> BinarySearchTree (y, Some (insert x subTree), r)
-        | None -> BinarySearchTree (y, Some (BinarySearchTree (x, None, None)), r)
+         match l with 
+         | Some subTree -> BinarySearchTree (y, Some (insert x subTree), r)
+         | None -> BinarySearchTree (y, Some (BinarySearchTree (x, None, None)), r)
     else match r with
-    | Some subTree -> BinarySearchTree (y, l, Some (insert x subTree))
-    | None -> BinarySearchTree (y, l, Some (BinarySearchTree (x, None, None)))
+         | Some subTree -> BinarySearchTree (y, l, Some (insert x subTree))
+         | None -> BinarySearchTree (y, l, Some (BinarySearchTree (x, None, None)))
 
 let rec fromList (list: int list) = 
     let rec helper ls tree = 
