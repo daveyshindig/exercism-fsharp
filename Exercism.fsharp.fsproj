@@ -110,6 +110,14 @@
     <Compile Include="two-fer\TwoFerTest.fs" />
     <Compile Include="triangle\Triangle.fs" />
     <Compile Include="triangle\TriangleTest.fs" />
+    <Compile Include="robot-name\RobotName.fs" />
+    <Compile Include="robot-name\RobotNameTest.fs" />
+    <Compile Include="error-handling\ErrorHandling.fs" />
+    <Compile Include="error-handling\ErrorHandlingTest.fs" />
+    <Compile Include="scrabble-score\ScrabbleScore.fs" />
+    <Compile Include="scrabble-score\ScrabbleScoreTest.fs" />
+    <Compile Include="proverb\Proverb.fs" />
+    <Compile Include="proverb\ProverbTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
