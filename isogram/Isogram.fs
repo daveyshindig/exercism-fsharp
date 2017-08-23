@@ -1,10 +1,9 @@
 ﻿module Isogram
+open System
 
 let isogram (str: string) =
-    let ls = List.filter System.Char.IsLetter (List.ofSeq (str.ToLower()))
-    let rec isogram' (chars: char list) letters = 
-        match chars with
-        | [] -> true
-        | c :: tl when List.exists (fun x -> x = c) letters -> false
-        | c :: tl -> isogram' tl (c :: letters)
-    isogram' ls []
+    str
+    |> Seq.filter Char.IsLetter
+    |> Seq.map Char.ToLowerInvariant
+    |> Seq.countBy id
+    |> Seq.forall (fun (_,x) -> x = 1)
