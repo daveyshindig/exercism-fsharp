@@ -118,6 +118,12 @@
     <Compile Include="scrabble-score\ScrabbleScoreTest.fs" />
     <Compile Include="proverb\Proverb.fs" />
     <Compile Include="proverb\ProverbTest.fs" />
+    <Compile Include="protein-translation\ProteinTranslation.fs" />
+    <Compile Include="protein-translation\ProteinTranslationTest.fs" />
+    <Compile Include="strain\Strain.fs" />
+    <Compile Include="strain\StrainTest.fs" />
+    <Compile Include="isogram\Isogram.fs" />
+    <Compile Include="isogram\IsogramTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
