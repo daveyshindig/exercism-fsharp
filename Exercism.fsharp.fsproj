@@ -124,6 +124,14 @@
     <Compile Include="strain\StrainTest.fs" />
     <Compile Include="isogram\Isogram.fs" />
     <Compile Include="isogram\IsogramTest.fs" />
+    <Compile Include="sieve\Sieve.fs" />
+    <Compile Include="sieve\SieveTest.fs" />
+    <Compile Include="phone-number\PhoneNumber.fs" />
+    <Compile Include="phone-number\PhoneNumberTest.fs" />
+    <Compile Include="perfect-numbers\PerfectNumbers.fs" />
+    <Compile Include="perfect-numbers\PerfectNumbersTest.fs" />
+    <Compile Include="binary-search\BinarySearch.fs" />
+    <Compile Include="binary-search\BinarySearchTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
