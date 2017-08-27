@@ -132,6 +132,10 @@
     <Compile Include="perfect-numbers\PerfectNumbersTest.fs" />
     <Compile Include="binary-search\BinarySearch.fs" />
     <Compile Include="binary-search\BinarySearchTest.fs" />
+    <Compile Include="secret-handshake\SecretHandshake.fs" />
+    <Compile Include="secret-handshake\SecretHandshakeTest.fs" />
+    <Compile Include="word-count\Phrase.fs" />
+    <Compile Include="word-count\WordCountTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
