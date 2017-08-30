@@ -140,6 +140,10 @@
     <Compile Include="meetup\MeetupTest.fs" />
     <Compile Include="anagram\Anagram.fs" />
     <Compile Include="anagram\AnagramTest.fs" />
+    <Compile Include="series\Series.fs" />
+    <Compile Include="series\SeriesTest.fs" />
+    <Compile Include="simple-linked-list\SimpleLinkedList.fs" />
+    <Compile Include="simple-linked-list\SimpleLinkedListTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
