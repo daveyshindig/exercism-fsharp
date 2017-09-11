@@ -52,8 +52,12 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="all-your-base\AllYourBase.fs" />
+    <Compile Include="all-your-base\AllYourBaseTest.fs" />
     <Compile Include="example\Example.fs" />
     <Compile Include="example\ExampleTest.fs" />
+    <Compile Include="largest-series-product\LargestSeriesProduct.fs" />
+    <Compile Include="largest-series-product\LargestSeriesProductTest.fs" />
     <Compile Include="tree-building\TreeBuilding.fs" />
     <Compile Include="tree-building\TreeBuildingTest.fs" />
     <Content Include="packages.config" />
@@ -144,6 +148,8 @@
     <Compile Include="series\SeriesTest.fs" />
     <Compile Include="simple-linked-list\SimpleLinkedList.fs" />
     <Compile Include="simple-linked-list\SimpleLinkedListTest.fs" />
+    <Compile Include="matrix\Matrix.fs" />
+    <Compile Include="matrix\MatrixTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

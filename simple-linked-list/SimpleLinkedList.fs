@@ -27,16 +27,11 @@ let toList ls =
         | ListNode (t, ls) -> toListRec ls (t :: acc)
     toListRec ls [] |> List.rev
 
-let fromList ls =
-    let rec fromListRec ls acc = 
-        match ls with
-        | [] -> acc
-        | hd :: tl -> fromListRec tl (create hd acc)
-    fromListRec (ls |> List.rev) nil
+let fromList ls = List.foldBack create ls Nil
 
 let reverse ls =
     let rec reverseRec ls acc = 
         match ls with
         | Nil -> acc
         | ListNode (t, ls) -> reverseRec ls (create t acc)
-    reverseRec ls nil
+    reverseRec ls Nil
